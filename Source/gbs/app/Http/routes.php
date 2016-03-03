@@ -11,6 +11,12 @@
 |
 */
 
+Route::controller('helloworld','HelloWorldController');
+
+Route::get('/test', function () {
+    return 'Hello World';
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -29,3 +35,5 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
     //
 });
+
+Route::get('/helloworld', 'HelloWorldController@index');
